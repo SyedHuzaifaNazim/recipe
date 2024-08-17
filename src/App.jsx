@@ -33,7 +33,7 @@ function App() {
           <Route path='/' element={<Header />} />
         </Routes>
       </Router>
-      <h1 className='recipe-title'>Home Made Oat Flour Pizza</h1>
+      {/* <h1 className='recipe-title'>Home Made Oat Flour Pizza</h1> */}
       <h1 className='head'>My Recipes</h1>
       <Form onSubmit={handleSearch}>
         <Form.Control type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search recipes" />
