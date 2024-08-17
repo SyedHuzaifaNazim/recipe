@@ -6,8 +6,7 @@ import { BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [myData, setMyData] = useState([])
-
+  const [myData, setMyData] = useState([]);
   useEffect(()=>{
     axios.get('https://dummyjson.com/recipes')
     .then(response => {
@@ -18,7 +17,7 @@ function App() {
     })
   }, [])
   
-
+  // const imagePath = require(`./assets/${pngwing.com}.png`);
   return (
     <>
         <Router>
@@ -27,6 +26,7 @@ function App() {
           </Routes>
         </Router>
         <h1 className='recipe-title'>Home Made Oat Flour Pizza</h1>
+        {/* <img src={imagePath} alt="" sizes="" srcset="assets" /> */}
     </>
   )
 }
