@@ -4,6 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Contact from "./Contact";
+import About from "./About";
+import Support from "./Support";
 
 function Header() {
     return(
@@ -18,11 +21,11 @@ function Header() {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Recipes</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Contact</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item element={<Contact />}>Contact</NavDropdown.Item>
+              <NavDropdown.Item element={<About />}>
                 About
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item element={<Support />}>
               Support Us
               </NavDropdown.Item>
               <NavDropdown.Divider />
