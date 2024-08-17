@@ -13,7 +13,6 @@ import Home from "./Home";
 function Header() {
     return(
         <>
-        <img src="" alt="" />
         <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home" className="recipe-title"></Navbar.Brand>

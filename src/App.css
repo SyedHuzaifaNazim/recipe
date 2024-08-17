@@ -87,6 +87,7 @@ h1 {
 .recipe-title {
   font-size: 1.5em;
   margin-bottom: 10px;
+  background-color: transparent , !important;
 }
 
 .recipe-description {
@@ -278,4 +279,7 @@ h1 {
 
 .recipe-image {
   width: 50%;
+}
+.dmon{
+  background: transparent !important;
 }
