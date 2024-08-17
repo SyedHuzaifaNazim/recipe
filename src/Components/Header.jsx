@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from "./Contact";
 import About from "./About";
 import Support from "./Support";
+import Recipes from "./Recipes";
+import Home from "./Home";
 
 function Header() {
     return(
@@ -18,8 +20,8 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Recipes</Nav.Link>
+            <Nav.Link element={<Home />}>Home</Nav.Link>
+            <Nav.Link element={<Recipes />}>Recipes</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
               <NavDropdown.Item element={<Contact />}>Contact</NavDropdown.Item>
               <NavDropdown.Item element={<About />}>
