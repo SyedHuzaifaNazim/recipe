@@ -4,9 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Contact from "./Contact";
-import About from "./About";
-import Support from "./Support";
+import Contact from "../Pages/Contact";
+import About from "../Pages/About";
+import Support from "../Pages/Support";
 import Recipes from "./Recipes";
 import Home from "./Home";
 

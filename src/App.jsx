@@ -62,17 +62,28 @@ function App() {
         ) : (
           recipes.map((recipe, index) => (
             <li key={index} className="recipe-header">
-              <img src={recipe.image} alt={recipe.name} className="recipe-image" style={{ width: '10%' }} />
+              <br />
+              <img src={recipe.image} alt={recipe.name}
+               className="recipe-image" style={{ width: '10%',zIndex: '45' }} href={recipe.image}/>
+
               <div className="recipe-info">
-                <h2 className="recipe-title">{recipe.id}. {recipe.name}</h2>
-                <ul className="recipe-ingredients-list">
+                <h2 className="recipe-title" href={recipe.image}>{recipe.id}. {recipe.name}</h2>
+                <i>----------- rating: {recipe.rating} ------------</i>
+                <li className="recipe-ingredients-list">
+                  <h4>Ingredients: </h4>
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
                     <div>
                     <li key={ingredientIndex} className="recipe-ingredients-list-item">{ingredient}</li>
                     </div>
                   ))}
-                </ul>
+                </li>
               </div>
+                  <li className="recipe-description">
+                    <h4>Instructions :</h4>
+                    <strong className='recipe-description'>
+                      {recipe.instructions}
+                    </strong>
+                  </li>
             </li>
           ))
         )}
