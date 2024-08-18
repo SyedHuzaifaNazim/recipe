@@ -22,6 +22,10 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    axios.get(`https://dummyjson.com/recipes/search?q=${searchQuery}`)
+    .then(response => {
+      setSearchResults(response.data.recipes);
+      })
     const filteredData = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()));
     setSearchResults(filteredData);
   };
