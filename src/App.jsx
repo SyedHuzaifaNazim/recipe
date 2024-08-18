@@ -26,7 +26,7 @@ function App() {
     .then(response => {
       setSearchResults(response.data.recipes);
       })
-    const filteredData = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()));
+    const filteredData = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchQuery.toLowerCase()));
     setSearchResults(filteredData);
   };
 
@@ -49,7 +49,7 @@ function App() {
             <li key={index} className="recipe-header">
               <img src={recipe.image} alt={recipe.name} className="recipe-image" />
               <div className="recipe-info">
-                <h2 className="recipe-title">Name: {recipe.title}</h2>
+                <h2 className="recipe-title">Name: {recipe.name}</h2>
                 <p>ID: {recipe.id}</p>
                 <ul className="recipe-ingredients-list">
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
