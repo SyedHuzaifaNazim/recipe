@@ -4,10 +4,11 @@ import Header from '../src/Components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button } from 'react-bootstrap';
+import Footer from './Components/Footer';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -25,8 +26,8 @@ function App() {
     axios.get(`https://dummyjson.com/recipes/search?q=${searchQuery}`)
     .then(response => {
       setSearchResults(response.data.recipes);
-      })
-    const filteredData = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      });
+    const filteredData = recipes.filter(recipe => recipe.name.tags.toLowerCase().includes(searchQuery.toLowerCase()));
     setSearchResults(filteredData);
   };
 
@@ -47,19 +48,31 @@ function App() {
         {searchResults.length > 0 ? (
           searchResults.map((recipe, index) => (
             <li key={index} className="recipe-header">
-              <img src={recipe.image} alt={recipe.name} className="recipe-image" />
+              
               <div className="recipe-info">
-                <h2 className="recipe-title">Name: {recipe.name}</h2>
-                <p>ID: {recipe.id}</p>
+                <h2 className="recipe-title">
+                  {recipe.id}. {recipe.name} 
+                </h2>
+                <img src={recipe.image} alt={recipe.name}
+                  className="recipe-image" style={{ width: '30%',zIndex: '45', border: 'black' }} 
+                  href={recipe.image}/>
                 <ul className="recipe-ingredients-list">
+                <h4>Ingredients: </h4>
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
                     <li key={ingredientIndex} className="recipe-ingredients-list-item">{ingredient}</li>
                   ))}
+                <li className="recipe-description">
+                 <h4>Instructions:</h4>
+                 <strong>{recipe.instructions}</strong>
+                </li>
+                <br />
                 </ul>
               </div>
             </li>
           ))
+
         ) : (
+
           recipes.map((recipe, index) => (
             <li key={index} className="recipe-header">
               <br />
@@ -88,6 +101,8 @@ function App() {
           ))
         )}
       </ul>
+      <hr />
+      <Footer />
     </div>
   );
 }

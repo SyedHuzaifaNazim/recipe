@@ -1,21 +1,24 @@
 import React from "react";
+import { StrictMode } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from "../Pages/Contact";
 import About from "../Pages/About";
 import Support from "../Pages/Support";
-import Recipes from "./Recipes";
+import Recipes from "../Pages/Recipes";
 import Home from "./Home";
+// import logo from 'https://www.canva.com/design/DAGOPVIiglw/e6gmZaepUJOgQFUnTIHODA/view?utm_content=DAGOPVIiglw&utm_campaign=designshare&utm_medium=link&utm_source=editor';
 
+'strict';
 function Header() {
     return(
         <>
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-white-transparent">
       <Container>
-        <Navbar.Brand href="#home" className="recipe-title">My Recipes</Navbar.Brand>
+        {/* <img src={logo} alt="" /> */}
+        <Navbar.Brand href="#Home" elemet = {<Home/>} className="recipe-title">My Recipes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -24,7 +27,9 @@ function Header() {
             <NavDropdown title="More" id="basic-nav-dropdown">
               <NavDropdown.Item element={<Contact />}>Contact</NavDropdown.Item>
               <NavDropdown.Item element={<About />}>
+              <link to='/Home'>
                 About
+                </link>
               </NavDropdown.Item>
               <NavDropdown.Item element={<Support />}>
               Support Us
