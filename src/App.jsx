@@ -34,7 +34,7 @@ function App() {
         </Routes>
       </Router>
       {/* <h1 className='recipe-title'>Home Made Oat Flour Pizza</h1> */}
-      <h1 className='head'>My Recipes</h1>
+      <h1 className='head'></h1>
       <Form onSubmit={handleSearch}>
         <Form.Control type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search recipes" />
         <Button type="submit">Search</Button>
@@ -43,9 +43,9 @@ function App() {
         {searchResults.length > 0 ? (
           searchResults.map((recipe, index) => (
             <li key={index} className="recipe-header">
-              <img src={recipe.thumbnail} alt={recipe.title} className="recipe-image" />
+              <img src={recipe.image} alt={recipe.name} className="recipe-image" />
               <div className="recipe-info">
-                <h2 className="recipe-title">{recipe.title}</h2>
+                <h2 className="recipe-title">Name: {recipe.title}</h2>
                 <p>ID: {recipe.id}</p>
                 <ul className="recipe-ingredients-list">
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
@@ -58,13 +58,14 @@ function App() {
         ) : (
           recipes.map((recipe, index) => (
             <li key={index} className="recipe-header">
-              <img src={recipe.thumbnail} alt={recipe.title} className="recipe-image" />
+              <img src={recipe.image} alt={recipe.name} className="recipe-image" />
               <div className="recipe-info">
-                <h2 className="recipe-title">{recipe.title}</h2>
-                <p>ID: {recipe.id}</p>
+                <h2 className="recipe-title">{recipe.id}. {recipe.name}</h2>
                 <ul className="recipe-ingredients-list">
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
+                    <div>
                     <li key={ingredientIndex} className="recipe-ingredients-list-item">{ingredient}</li>
+                    </div>
                   ))}
                 </ul>
               </div>
