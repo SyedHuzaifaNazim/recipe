@@ -62,7 +62,7 @@ function App() {
         ) : (
           recipes.map((recipe, index) => (
             <li key={index} className="recipe-header">
-              <img src={recipe.image} alt={recipe.name} className="recipe-image" />
+              <img src={recipe.image} alt={recipe.name} className="recipe-image" style={{ width: '10%' }} />
               <div className="recipe-info">
                 <h2 className="recipe-title">{recipe.id}. {recipe.name}</h2>
                 <ul className="recipe-ingredients-list">
