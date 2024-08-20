@@ -57,6 +57,7 @@ function App() {
                   className="recipe-image" style={{ width: '30%',zIndex: '45', border: 'black' }} 
                   href={recipe.image}/>
                 <ul className="recipe-ingredients-list">
+                  <i>----------- rating: {recipe.rating} ------------</i>
                 <h4>Ingredients: </h4>
                   {recipe.ingredients.map((ingredient, ingredientIndex) => (
                     <li key={ingredientIndex} className="recipe-ingredients-list-item">{ingredient}</li>
