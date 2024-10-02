@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../src/Components/Header';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button } from 'react-bootstrap';
 import Footer from './Components/Footer';
@@ -32,12 +32,13 @@ function App() {
   };
 
   return (
+    <>
     <div className="container">
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Header />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
       {/* <h1 className='recipe-title'>Home Made Oat Flour Pizza</h1> */}
       <h1 className='head'></h1>
       <Form onSubmit={handleSearch}>
@@ -105,6 +106,7 @@ function App() {
       <hr />
       <Footer />
     </div>
+    </>
   );
 }
 
